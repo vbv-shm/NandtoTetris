@@ -1,0 +1,42 @@
+class BigTree{
+	field int x;
+	constructor BigTree new(int xlocation){
+		do Screen.setColor(true);
+		do drawTrunck(xlocation);
+		do drawBigLeaf(xlocation);
+		do drawSmallLeaf(xlocation);
+		return this;
+	
+	}
+
+	method void drawTrunck(int xlocation){
+		do Screen.drawLine(xlocation,170,xlocation,250);
+		do Screen.drawLine(xlocation+1,170,xlocation+1,250);
+		do Screen.drawLine(xlocation+2,170,xlocation+2,250);
+		do Screen.drawLine(xlocation-1,170,xlocation-1,250);
+		do Screen.drawLine(xlocation-2,170,xlocation-2,250);
+		return;
+
+	}
+	method void drawBigLeaf(int xlocation){
+		var int x;
+		let x=1;
+		while(x<12){
+			do Screen.drawLine(xlocation,170+5+(4*x),xlocation-16,170+15+(4*x));
+			do Screen.drawLine(xlocation,170+5+(4*x),xlocation+16,170+15+(4*x));
+			let x=x+1;
+		}
+		return;
+	}
+	method void drawSmallLeaf(int xlocation){
+		var int x;
+		let x=1;
+		while(x<12){
+			do Screen.drawLine(xlocation,170+7+(4*x),xlocation-10,170+17+(4*x));
+			do Screen.drawLine(xlocation,170+7+(4*x),xlocation+10,170+17+(4*x));
+			let x=x+1;
+		}
+		return;
+	}
+}
+	

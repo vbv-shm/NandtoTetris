@@ -1,0 +1,16 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/SysTest/Main.jack
+
+/** Test program for the OS Sys class. */
+class Main {
+	
+    /** Tests the wait method of the Sys class. */
+    function void main() {
+	var Cls x;
+	let x=Cls.new(30);
+        	do Output.printInt(x.fa);
+        return;
+    }
+}

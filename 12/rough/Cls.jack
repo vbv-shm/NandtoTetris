@@ -1,0 +1,9 @@
+
+class Cls {
+	field int fa,fb;
+	constructor Cls new(int a){
+		let fa=20;
+		let fb=a;
+		return this;
+	}
+}

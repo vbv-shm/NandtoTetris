@@ -1,0 +1,23 @@
+// eq
+@SP
+M=M-1
+A=M
+D=-M
+@SP
+M=M-1
+A=M
+D=D+M
+@eq.true.2
+D;JEQ
+@SP
+A=M
+M=0
+@eq.continue.2
+0;JMP
+(eq.true.2)
+@SP
+A=M
+M=-1
+(eq.continue.2)
+@SP
+M=M+1

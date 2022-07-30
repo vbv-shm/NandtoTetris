@@ -1,0 +1,57 @@
+class Night{
+field int x;
+	constructor Night new(){
+		var String s;
+		do draw();
+		do Screen.setColor(false);
+		do star(1000);
+		do star(1500);
+		do star(1800);
+		do star(1900);
+		do star(2000);
+		do star(3000);
+		do star(3500);
+		do star(3600);
+		do star(3100);
+		do Screen.setColor(false);
+		let s="Shh!! Everyone is sleeping...";
+		do Output.moveCursor(3,20);
+		do Output.printString(s);
+		return this;
+		
+
+
+
+	} 
+
+	method void draw() {
+		var int memAddress;
+		do Screen.setColor(true);
+		do Screen.drawRectangle(15,1,493,160);
+		return;
+	}
+
+	method void star(int location){
+	var int memAddress;
+	let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, 128);
+	do Memory.poke(memAddress+32, 448);
+	do Memory.poke(memAddress+64, 992);
+	do Memory.poke(memAddress+96, -30735);
+	do Memory.poke(memAddress+128, -1);
+	do Memory.poke(memAddress+160, 32766);
+	do Memory.poke(memAddress+192, 8060);
+	do Memory.poke(memAddress+224, 16254);
+	do Memory.poke(memAddress+256, -1);
+	do Memory.poke(memAddress+288, -28703);
+	do Memory.poke(memAddress+320, 992);
+	do Memory.poke(memAddress+352, 448);
+	do Memory.poke(memAddress+384, 128);
+	do Memory.poke(memAddress+416, 0);
+	do Memory.poke(memAddress+448, 0);
+	do Memory.poke(memAddress+480, 0);
+	return;
+}
+
+
+}

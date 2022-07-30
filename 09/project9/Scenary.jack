@@ -1,0 +1,131 @@
+class Scenary{
+	field int a;
+	constructor Scenary new(){
+		var SnowFall snowfall;
+		var int x;
+		let x=1;
+		do House.new(200,185);
+		do BigTree.new(30);
+		do BigTree.new(50);
+		do BigTree.new(170);
+		do BigTree.new(400);
+		do BigTree.new(440);
+
+		do SmallTree.new(80);
+		do SmallTree.new(110);
+		do SmallTree.new(140);
+		do SmallTree.new(320);
+		do SmallTree.new(350);
+		do SmallTree.new(370);
+		do SmallTree.new(420);
+		do SmallTree.new(460);
+		do SmallTree.new(480);
+		
+		do Pattern.new();
+		do drawMountains();
+		do changeSeasons();
+
+
+	
+
+		return this;
+	}
+
+	method void changeSeasons(){
+      	var char key; 
+      	var boolean exit;
+
+	var SnowFall snowfall;
+	var String s;
+	
+	let s="Type up arrow for winnter season, down arrow for summer season and right arrow for night";
+	do Output.moveCursor(1,5);
+	do Output.printString(s);
+		
+	let exit = false;
+	let snowfall = SnowFall.new();
+
+      while (~exit) {
+
+         while (key = 0) {
+            	let key = Keyboard.keyPressed();
+         }
+
+         if (key = 81)  { let exit = true; }  
+   
+         if (key = 131)  { 		
+		do erase();
+
+		do Pattern.new();
+		do drawMountains();
+		do snowfall.fall();
+		do Sys.wait(1000);
+		}
+
+
+         if (key = 133)  { 
+		do erase();
+		
+		do Pattern.new();
+		do drawMountains();
+		do Sun.new(250,40);
+		do Sys.wait(5000);
+ 	} 
+
+         if (key = 132)  { 
+		do erase();
+		
+		do Pattern.new();
+		do Night.new();
+		do Sys.wait(5000);
+ 	} 
+
+
+	let key = Keyboard.keyPressed();
+
+     } 
+	return;
+		
+	}
+
+	method void erase() {
+		var int memAddress;
+		do Screen.setColor(false);
+		do Screen.drawRectangle(15,1,493,160);
+		return;
+	}
+
+	method void drawMountains(){
+		do Screen.drawLine(15,130,30,160);
+		do Screen.drawLine(30,160,80,110);
+		do Screen.drawLine(80,110,130,160);
+		do Screen.drawLine(130,160,180,110);
+		do Screen.drawLine(180,110,230,160);
+		do Screen.drawLine(230,160,280,110);
+		do Screen.drawLine(280,110,330,160);
+		do Screen.drawLine(330,160,380,110);
+		do Screen.drawLine(380,110,420,160);
+		do Screen.drawLine(420,160,470,110);
+		do Screen.drawLine(470,110,500,135);
+
+		do Screen.drawLine(16,130,31,160);
+		do Screen.drawLine(31,160,81,110);
+		do Screen.drawLine(81,110,131,160);
+		do Screen.drawLine(131,160,181,110);
+		do Screen.drawLine(181,110,231,160);
+		do Screen.drawLine(231,160,281,110);
+		do Screen.drawLine(281,110,331,160);
+		do Screen.drawLine(331,160,381,110);
+		do Screen.drawLine(381,110,421,160);
+		do Screen.drawLine(421,160,471,110);
+		do Screen.drawLine(471,110,501,135);
+
+
+		return;
+
+
+
+}
+
+
+}

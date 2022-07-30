@@ -1,0 +1,203 @@
+function Bat.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop field 0
+push argument 1
+pop field 1
+push argument 2
+pop field 2
+push argument 3
+pop field 3
+push constant 2
+pop field 4
+call Bat.show 1
+pop temp 0
+push None None
+return
+function Bat.dispose 0
+push argument 0
+pop pointer 0
+push argument 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Bat.show 0
+push argument 0
+pop pointer 0
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+call Bat.draw 1
+pop temp 0
+push constant 0
+return
+function Bat.hide 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+call Bat.draw 1
+pop temp 0
+push constant 0
+return
+function Bat.draw 0
+push argument 0
+pop pointer 0
+push field 0
+push field 1
+push field 0
+push field 2
+add
+push field 1
+push field 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Bat.setDirection 0
+push argument 0
+pop pointer 0
+push argument 1
+pop field 4
+push constant 0
+return
+function Bat.getLeft 0
+push argument 0
+pop pointer 0
+push field 0
+return
+function Bat.getRight 0
+push argument 0
+pop pointer 0
+push field 0
+push field 2
+add
+return
+function Bat.setWidth 0
+push argument 0
+pop pointer 0
+call Bat.hide 1
+pop temp 0
+push argument 1
+pop field 2
+call Bat.show 1
+pop temp 0
+push constant 0
+return
+function Bat.move 0
+push argument 0
+pop pointer 0
+push field 4
+push constant 1
+eq
+not
+if-goto IF.Bat.move.0
+push field 0
+push constant 4
+sub
+pop field 0
+push field 0
+push constant 0
+lt
+not
+if-goto IF.Bat.move.2
+push constant 0
+pop field 0
+goto IF.Bat.move.3
+label IF.Bat.move.2
+label IF.Bat.move.3
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push field 0
+push field 2
+add
+push constant 1
+add
+push field 1
+push field 0
+push field 2
+add
+push constant 4
+add
+push field 1
+push field 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+push field 0
+push field 1
+push field 0
+push constant 3
+add
+push field 1
+push field 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+goto IF.Bat.move.1
+label IF.Bat.move.0
+push field 0
+push constant 4
+add
+pop field 0
+push field 0
+push field 2
+add
+push constant 511
+gt
+not
+if-goto IF.Bat.move.4
+push constant 511
+push field 2
+sub
+pop field 0
+goto IF.Bat.move.5
+label IF.Bat.move.4
+label IF.Bat.move.5
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push field 0
+push constant 4
+sub
+push field 1
+push field 0
+push constant 1
+sub
+push field 1
+push field 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 1
+neg
+call Screen.setColor 1
+pop temp 0
+push field 0
+push field 2
+add
+push constant 3
+sub
+push field 1
+push field 0
+push field 2
+add
+push field 1
+push field 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+label IF.Bat.move.1
+push constant 0
+return

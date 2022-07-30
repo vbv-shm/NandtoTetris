@@ -1,0 +1,52 @@
+class SnowFall{
+	field Array snowflakes;
+
+	constructor SnowFall new(){
+		var int x;
+		var int y;
+		var int z;
+		let x=1;
+		let y=1;
+		let z=1;
+	
+		let snowflakes=Array.new(72);
+		while(x<9){
+			while(y<10){
+				let snowflakes[z-1]=SnowFlake.new(512*x+(3*y)+512);
+				let y=y+1;
+				let z=z+1;
+			}
+			let x=x+1;
+			let y=1;
+		}
+		return this;
+	} 
+	method void fall(){
+		var SnowFlake a;
+		var int y,z;
+		var String s;
+		let s="Snow falling in winter";
+		let y=0;
+		let z=1;
+		do Output.moveCursor(1,17);
+		do Output.printString(s);
+			while(y<72){
+				let a=snowflakes[y];
+				do a.draw();
+				let y=y+1;
+				if(z=9){
+					do Sys.wait(1000);
+					let z=1;
+				}
+				let z=z+1;
+				
+			}
+		
+		return;
+
+	
+	}
+
+
+	
+}

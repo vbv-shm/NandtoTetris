@@ -1,0 +1,17 @@
+@SP
+M=M-1
+A=M
+@not.zero.37
+M;JEQ
+@SP
+A=M
+M=0
+@not.continue.37
+0;JMP
+(not.zero.37)
+@SP
+A=M
+M=-1
+(not.continue.37)
+@SP
+M=M+1

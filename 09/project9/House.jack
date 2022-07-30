@@ -1,0 +1,33 @@
+class House{
+	field int x;
+
+	constructor House new(int xlocation,int ylocation){
+		do Screen.setColor(true);
+		do Screen.drawLine(32,250,480,250);
+		do Screen.drawRectangle(xlocation,ylocation+20,xlocation+100,ylocation+65);
+		do Screen.drawLine(xlocation,ylocation+20,xlocation+25,ylocation);
+		do Screen.drawLine(xlocation+1,ylocation+20,xlocation+25+1,ylocation);
+
+		do Screen.drawLine(xlocation+75,ylocation,xlocation+100,ylocation+20);
+		do Screen.drawLine(xlocation+75,ylocation+1,xlocation+100,ylocation+20+1);
+
+		do Screen.drawLine(xlocation+25,ylocation,xlocation+75,ylocation);
+		do Screen.drawLine(xlocation+25,ylocation+1,xlocation+75,ylocation+1);
+
+		do Screen.drawLine(xlocation+25,ylocation,xlocation+50,ylocation+20);
+		do Screen.drawLine(xlocation+25,ylocation+1,xlocation+50,ylocation+20+1);
+
+
+		do Screen.setColor(false);
+		do Screen.drawRectangle(xlocation+60,ylocation+50,xlocation+80,ylocation+64);
+		do Screen.drawCircle(xlocation+20,ylocation+30,5);		
+		
+		do Screen.setColor(true);
+		do Screen.drawLine(xlocation+70,ylocation+50,xlocation+70,ylocation+64);
+
+
+		return this;
+	
+	}
+
+}

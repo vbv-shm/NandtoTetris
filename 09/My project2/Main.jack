@@ -1,0 +1,54 @@
+class Main {
+
+	function void main(){
+		var int a, x, y;
+		var String s;
+		var char k;
+		let a=20;
+		do Screen.setColor(true);
+		do Screen.drawCircle(250,100,a);
+		let x=250;
+		let y=100;
+		while(true){
+			while(k=0){	
+			let k=Keyboard.keyPressed();
+				  }
+			if(k=131){
+				do Screen.setColor(false);
+				do Screen.drawCircle(x,y,a);
+				let a=a+10;
+				do Screen.setColor(true);
+				do Screen.drawCircle(x,y,a);
+				let k=0;
+				   }	
+			if(k=133){
+				do Screen.setColor(false);
+				do Screen.drawCircle(x,y,a);
+				let a=a-10;
+				do Screen.setColor(true);
+				do Screen.drawCircle(x,y,a);
+				let k=0;  
+				 }
+			if(k=132){
+				do Screen.setColor(false);
+				do Screen.drawCircle(x,y,a);
+				let x=x+10;
+				do Screen.setColor(true);
+				do Screen.drawCircle(x,y,a);
+				let k=0;				  
+ }
+			if(k=130){
+				do Screen.setColor(false);
+				do Screen.drawCircle(x,y,a);
+				let x=x-10;
+				do Screen.setColor(true);
+				do Screen.drawCircle(x,y,a);
+				let k=0;
+				   }
+			do Sys.wait(200);
+				
+			     }
+		return;	
+		
+	}
+}

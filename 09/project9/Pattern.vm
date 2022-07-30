@@ -1,0 +1,148 @@
+function Pattern.new 3
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop local 0
+push constant 1
+pop local 1
+push constant 1
+pop local 2
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+label WHILE_EXP0
+push local 0
+push constant 16
+lt
+not
+if-goto WHILE_END0
+push pointer 0
+push constant 512
+push local 0
+call Math.multiply 2
+call Pattern.draw 2
+pop temp 0
+push pointer 0
+push constant 512
+push local 0
+call Math.multiply 2
+push constant 31
+add
+call Pattern.draw 2
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push pointer 0
+return
+function Pattern.draw 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 96
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 16
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 12
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 194
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 193
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 6
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 248
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 3968
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 28672
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 16384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 14336
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 1536
+call Memory.poke 2
+pop temp 0
+push constant 0
+return

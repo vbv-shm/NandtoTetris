@@ -1,0 +1,10 @@
+class Main {
+
+
+	function void main(){
+		do Scenary.new();
+		return;	
+		}
+
+
+}

@@ -1,0 +1,20 @@
+class Sun{
+	field int x;
+
+	constructor Sun new(int xlocation,int ylocation){
+		var String s,r;
+		do Screen.setColor(true);
+		do Screen.drawCircle(xlocation,ylocation,25);
+		let s="Sun has come up!";
+		let r=" Very hot day";
+
+		do Output.moveCursor(1,5);
+		do Output.printString(s);
+		do Output.moveCursor(2,7);
+		do Output.printString(r);
+		return this;
+
+	
+	}
+
+}

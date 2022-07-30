@@ -1,0 +1,40 @@
+class SmallTree{
+	field int x;
+	constructor SmallTree new(int xlocation){
+		do Screen.setColor(true);
+		do drawTrunck(xlocation);
+		do drawBigLeaf(xlocation);
+		do drawSmallLeaf(xlocation);
+		return this;
+	
+	}
+
+	method void drawTrunck(int xlocation){
+		do Screen.drawLine(xlocation,200,xlocation,250);
+		do Screen.drawLine(xlocation+1,200,xlocation+1,250);
+		do Screen.drawLine(xlocation-1,200,xlocation-1,250);
+		return;
+
+	}
+	method void drawBigLeaf(int xlocation){
+		var int x;
+		let x=0;
+		while(x<10){
+			do Screen.drawLine(xlocation,200+3+(3*x),xlocation-13,200+16+(3*x));
+			do Screen.drawLine(xlocation,200+3+(3*x),xlocation+13,200+16+(3*x));
+			let x=x+1;
+		}
+		return;
+	}
+	method void drawSmallLeaf(int xlocation){
+		var int x;
+		let x=0;
+		while(x<10){
+			do Screen.drawLine(xlocation,200+7+(3*x),xlocation-8,200+15+(3*x));
+			do Screen.drawLine(xlocation,200+7+(3*x),xlocation+8,200+15+(3*x));
+			let x=x+1;
+		}
+		return;
+	}
+}
+	
